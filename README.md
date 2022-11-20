@@ -20,12 +20,13 @@ Starting the executable with the switch --debug in the console will show you its
 more to follow.....
 
 
-###Tasks
+Tasks
+=====
 
-CPU opcodes (implementing)
-VIC - todo
-SID - todo
-Video = todo
+- CPU opcodes (implementing)
+- VIC - todo
+- SID - todo
+- Video = todo
 
 
 This is a work in progress!
