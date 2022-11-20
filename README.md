@@ -29,4 +29,4 @@ Tasks
 - Video = todo
 
 
-This is a work in progress!
+This is a work in progress! The emulator is not yet processing software.
