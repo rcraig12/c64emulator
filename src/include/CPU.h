@@ -78,72 +78,457 @@ private:
     static void INS_AND_ABS_X_0x3d();        // = 0x3d
     static void INS_ROL_ABS_X_0x3e();        // = 0x3e
     static void INS_RLA_ABS_X_0x3f();        // = 0x3f
+    static void INS_RTI_IMP_0x40();          // = 0x40
+    static void INS_EOR_X_IND_0x41();        // = 0x41
+    static void INS_JAM_0x42();              // = 0x42
+    static void INS_SRE_X_IND_0x43();        // = 0x43
+    static void INS_NOP_ZPG_X_0x44();        // = 0x44
+    static void INS_EOR_ZPG_0x45();          // = 0x45
+    static void INS_LSR_ZPG_0x46();          // = 0x46
+    static void INS_SRE_ZPG_0x47();          // = 0x47
+    static void INS_PHA_IMP_0x48();          // = 0x48
+    static void INS_EOR_IMP_0x49();          // = 0x49
+    static void INS_LSR_A_0x4a();            // = 0x4a
+    static void INS_ALR_IMP_0x4b();          // = 0x4b
+    static void INS_JMP_ABS_0x4c();          // = 0x4c
+    static void INS_EOR_ABS_0x4d();          // = 0x4d
+    static void INS_LSR_ABS_0x4e();          // = 0x4e
+    static void INS_SRE_ABS_0x4f();          // = 0x4f
+    static void INS_BVC_REL_0x50();          // = 0x50
+    static void INS_EOR_IND_Y_0x51();        // = 0x51
+    static void INS_JAM_0x52();              // = 0x52
+    static void INS_SRE_IND_Y_0x53();        // = 0x53
+    static void INS_NOP_ZPG_X_0x54();        // = 0x54
+    static void INS_EOR_ZPG_X_0x55();        // = 0x55
+    static void INS_LSR_ZPG_X_0x56();        // = 0x56
+    static void INS_SRE_ZPG_X_0x57();        // = 0x57
+    static void INS_CLI_IMP_0x58();          // = 0x58
+    static void INS_EOR_ABS_Y_0x59();        // = 0x59
+    static void INS_NOP_IMP_0x5a();          // = 0x5a
+    static void INS_SRE_ABS_Y_0x5b();        // = 0x5b
+    static void INS_NOP_ABS_X_0x5c();        // = 0x5c
+    static void INS_EOR_ABS_X_0x5d();        // = 0x5d
+    static void INS_LSR_ABS_X_0x5e();        // = 0x5e
+    static void INS_SRE_ABS_X_0x5f();        // = 0x5f
+    static void INS_RTS_IMP_0x60();          // = 0x60
+    static void INS_ADC_X_IND_0x61();        // = 0x61
+    static void INS_JAM_0x62();              // = 0x62
+    static void INS_RRA_X_IND_0x63();        // = 0x63
+    static void INS_NOP_ZPG_0x64();          // = 0x64
+    static void INS_ADC_ZPG_0x65();          // = 0x65
+    static void INS_ROR_ZPG_0x66();          // = 0x66
+    static void INS_RRA_ZPG_0x67();          // = 0x67
+    static void INS_PLA_IMP_0x68();          // = 0x68
+    static void INS_ADC_IMM_0x69();          // = 0x69
+    static void INS_ROR_A_0x6a();            // = 0x6a
+    static void INS_ARR_IMM_0x6b();          // = 0x6b
+    static void INS_JMP_IND_0x6c();          // = 0x6c
+    static void INS_ADC_ABS_0x6d();          // = 0x6d
+    static void INS_ROR_ABS_0x6e();          // = 0x6e
+    static void INS_RRA_ABS_0x6f();          // = 0x6f
+    static void INS_BVS_REL_0x70();          // = 0x70
+    static void INS_ADC_IND_Y_0x71();        // = 0x71
+    static void INS_JAM_0x72();              // = 0x72
+    static void INS_RRA_IND_Y_0x73();        // = 0x73
+    static void INS_NOP_ZPG_X_0x74();        // = 0x74
+    static void INS_ADC_ZPG_X_0x75();        // = 0x75
+    static void INS_ROR_ZPG_X_0x76();        // = 0x76
+    static void INS_RRA_ZPG_X_0x77();        // = 0x77
+    static void INS_SEA_IMP_0x78();          // = 0x78
+    static void INS_ADC_ABS_Y_0x79();        // = 0x79
+    static void INS_NOP_IMP_0x7a();          // = 0x7a
+    static void INS_RRA_ABS_Y_0x7b();        // = 0x7b
+    static void INS_NOP_ABS_X_0x7c();        // = 0x7c
+    static void INS_ADC_ABS_X_0x7d();        // = 0x7d
+    static void INS_ROR_ABS_X_0x7e();        // = 0x7e
+    static void INS_RRA_ABS_X_0x7f();        // = 0x7f
+    static void INS_NOP_IMM_0x80();          // = 0x80
+    static void INS_STA_X_IND_0x81();        // = 0x81
+    static void INS_NOP_IMM_0x82();          // = 0x82
+    static void INS_SAX_X_IND_0x83();        // = 0x83
+    static void INS_STY_ZPG_0x84();          // = 0x84
+    static void INS_STA_ZPG_0x85();          // = 0x85
+    static void INS_STX_ZPG_0x86();          // = 0x86
+    static void INS_SAX_ZPG_0x87();          // = 0x87
+    static void INS_DEY_IMP_0x88();          // = 0x88
+    static void INS_NOP_IMM_0x89();          // = 0x89
+    static void INS_TXA_IMP_0x8a();          // = 0x8a
+    static void INS_ANE_IMM_0x8b();          // = 0x8b
+    static void INS_STY_ABS_0x8c();          // = 0x8c
+    static void INS_STA_ABS_0x8d();          // = 0x8d
+    static void INS_STX_ABS_0x8e();          // = 0x8e
+    static void INS_SAX_ABS_0x8f();          // = 0x8f
+    static void INS_BCC_REL_0x90();          // = 0x90
+    static void INS_STA_IND_Y_0x91();        // = 0x91
+    static void INS_JAM_0x92();              // = 0x92
+    static void INS_SHA_IND_Y_0x93();        // = 0x93
+    static void INS_STY_ZPG_X_0x94();        // = 0x94
+    static void INS_STA_ZPG_X_0x95();        // = 0x95
+    static void INS_STX_ZPG_Y_0x96();        // = 0x96
+    static void INS_SAX_ZPG_Y_0x97();        // = 0x97
+    static void INS_TYA_IMP_0x98();          // = 0x98
+    static void INS_STA_ABS_Y_0x99();        // = 0x99
+    static void INS_TXS_IMP_0x9a();          // = 0x9a
+    static void INS_TAS_ABS_Y_0x9b();        // = 0x9b
+    static void INS_SHY_ABS_X_0x9c();        // = 0x9c
+    static void INS_STA_ABS_X_0x9d();        // = 0x9d
+    static void INS_SHX_ABS_Y_0x9e();        // = 0x9e
+    static void INS_SHA_ABS_Y_0x9f();        // = 0x9f
+    static void INS_LDY_IMM_0xa0();          // = 0xa0
+    static void INS_LDA_X_IND_0xa1();        // = 0xa1
+    static void INS_LDX_IMM_0xa2();          // = 0xa2
+    static void INS_LAX_X_IND_0xa3();        // = 0xa3
+    static void INS_LDY_ZPG_0xa4();          // = 0xa4
+    static void INS_LDA_ZPG_0xa5();          // = 0xa5
+    static void INS_LDX_ZPG_0xa6();          // = 0xa6
+    static void INS_LAX_ZPG_0xa7();          // = 0xa7
+    static void INS_TAY_IMP_0xa8();          // = 0xa8
+    static void INS_LDA_IMM_0xa9();          // = 0xa9
+    static void INS_TAX_IMP_0xaa();          // = 0xaa
+    static void INS_LXA_IMM_0xab();          // = 0xab
+    static void INS_LDY_ABS_0xac();          // = 0xac
+    static void INS_LDA_ABS_0xad();          // = 0xad
+    static void INS_LDX_ABS_0xae();          // = 0xae
+    static void INS_LAX_ABS_0xaf();          // = 0xaf
+    static void INS_BCS_REL_0xb0();          // = 0xb0
+    static void INS_LDA_IND_Y_0xb1();        // = 0xb1
+    static void INS_JAM_0xb2();              // = 0xb2
+    static void INS_LAX_IND_Y_0xb3();        // = 0xb3
+    static void INS_LDY_ZPG_X_0xb4();        // = 0xb4
+    static void INS_LDA_ZPG_X_0xb5();        // = 0xb5
+    static void INS_LDX_ZPG_Y_0xb6();        // = 0xb6
+    static void INS_LAX_ZPG_Y_0xb7();        // = 0xb7
+    static void INS_CLV_IMP_0xb8();          // = 0xb8
+    static void INS_LDA_ABS_Y_0xb9();        // = 0xb9
+    static void INS_TSX_IMP_0xba();          // = 0xba
+    static void INS_LAS_ABS_Y_0xbb();        // = 0xbb
+    static void INS_LDY_ABS_X_0xbc();        // = 0xbc
+    static void INS_LDA_ABS_X_0xbd();        // = 0xbd
+    static void INS_LDX_ABS_Y_0xbe();        // = 0xbe
+    static void INS_LAX_ABS_Y_0xbf();        // = 0xbf
+    static void INS_CPY_IMM_0xc0();          // = 0xc0
+    static void INS_CMP_X_IND_0xc1();        // = 0xc1
+    static void INS_NOP_IMM_0xc2();          // = 0xc2
+    static void INS_DCP_X_IND_0xc3();        // = 0xc3
+    static void INS_CPY_ZPG_0xc4();          // = 0xc4
+    static void INS_CMP_ZPG_0xc5();          // = 0xc5
+    static void INS_DEC_ZPG_0xc6();          // = 0xc6
+    static void INS_DCP_ZPG_0xc7();          // = 0xc7
+    static void INS_INY_IMP_0xc8();          // = 0xc8
+    static void INS_CMP_IMM_0xc9();          // = 0xc9
+    static void INS_DEX_IMP_0xca();          // = 0xca
+    static void INS_SBX_IMP_0xcb();          // = 0xcb
+    static void INS_CPY_ABS_0xcc();          // = 0xcc
+    static void INS_CMP_ABS_0xcd();          // = 0xcd
+    static void INS_DEC_ABS_0xce();          // = 0xce
+    static void INS_DCP_ABS_0xcf();          // = 0xcf
+    static void INS_BNE_REL_0xd0();          // = 0xd0
+    static void INS_CMP_IND_Y_0xd1();        // = 0xd1
+    static void INS_JAM_0xd2();              // = 0xd2
+    static void INS_DCP_IND_Y_0xd3();        // = 0xd3
+    static void INS_NOP_ZPG_X_0xd4();        // = 0xd4
+    static void INS_CMP_ZPG_X_0xd5();        // = 0xd5
+    static void INS_DEC_ZPG_X_0xd6();        // = 0xd6
+    static void INS_DCP_ZPG_X_0xd7();        // = 0xd7
+    static void INS_CLD_IMP_0xd8();          // = 0xd8
+    static void INS_CMP_ABS_Y_0xd9();        // = 0xd9
+    static void INS_NOP_IMP_0xda();          // = 0xda
+    static void INS_DCP_ABS_Y_0xdb();        // = 0xdb
+    static void INS_NOP_ABS_X_0xdc();        // = 0xdc
+    static void INS_CMP_ABS_X_0xdd();        // = 0xdd
+    static void INS_DEC_ABS_X_0xde();        // = 0xde
+    static void INS_DCP_ABS_X_0xdf();        // = 0xdf
+    static void INS_CPX_IMM_0xe0();          // = 0xe0
+    static void INS_SBC_X_IND_0xe1();        // = 0xe1
+    static void INS_NOP_IMM_0xe2();          // = 0xe2
+    static void INS_ISC_X_IND_0xe3();        // = 0xe3
+    static void INS_CPX_ZPG_0xe4();          // = 0xe4
+    static void INS_SBC_ZPG_0xe5();          // = 0xe5
+    static void INS_INC_ZPG_0xe6();          // = 0xe6
+    static void INS_ISC_ZPG_0xe7();          // = 0xe7
+    static void INS_INX_IMP_0xe8();          // = 0xe8
+    static void INS_SBC_IMM_0xe9();          // = 0xe9
+    static void INS_NOP_IMP_0xea();          // = 0xea
+    static void INS_USBC_IMM_0xeb();         // = 0xeb
+    static void INS_CPX_ABS_0xec();          // = 0xec
+    static void INS_SBC_ABS_0xed();          // = 0xed
+    static void INS_INC_ABS_0xee();          // = 0xee
+    static void INS_ISC_ABS_0xef();          // = 0xef
+    static void INS_BEQ_REL_0xf0();          // = 0xf0
+    static void INS_SBC_IND_Y_0xf1();        // = 0xf1
+    static void INS_JAM_0xf2();              // = 0xf2
+    static void INS_ISC_IND_Y_0xf3();        // = 0xf3
+    static void INS_NOP_ZPG_X_0xf4();        // = 0xf4
+    static void INS_SBC_ZPG_X_0xf5();        // = 0xf5
+    static void INS_INC_ZPG_X_0xf6();        // = 0xf6
+    static void INS_ISC_ZPG_X_0xf7();        // = 0xf7
+    static void INS_SED_IMP_0xf8();          // = 0xf8
+    static void INS_SBC_ABS_Y_0xf9();        // = 0xf9
+    static void INS_NOP_IMP_0xfa();          // = 0xfa
+    static void INS_ISC_ABS_Y_0xfb();        // = 0xfb
+    static void INS_NOP_ABS_X_0xfc();        // = 0xfc
+    static void INS_SBC_ABS_X_0xfd();        // = 0xfd
+    static void INS_INC_ABS_X_0xfe();        // = 0xfe
+    static void INS_ISC_ABS_X_0xff();        // = 0xff
 
-    void (*opcode_table[64])() = {
-        INS_BRK_IMPL,                   // 0x00
-        INS_ORA_X_IND,                  // 0x01
-        INS_JAM_0X02,                   // 0x02
-        INS_SLO_X_IND,                  // 0x03
-        INS_NOP_ZPG,                    // 0x04
-        INS_ORA_ZPG,                    // 0x05
-        INS_ASL_ZPG,                    // 0x06
-        INS_SLO_ZPG,                    // 0x07
-        INS_PHP_IMPL,                   // 0x08
-        INS_ORA_IMM,                    // 0x09
-        INS_ASL_IMP,                    // 0x0a
-        INS_ANC_IMM_0x0b,               // 0x0b
-        INS_NOP_ABS,                    // 0x0c
-        INS_ORA_ABS,                    // 0x0d
-        INS_ASL_ABS,                    // 0x0e
-        INS_SLO_ABS,                    // 0x0f
-        INS_BPL_REL,                    // 0x10
-        INS_ORA_IND_Y,                  // 0x11
-        INS_JAM_0x12,                   // 0x12
-        INS_SLO_IND_Y,                  // 0x13
-        INS_NOP_ZPG_X_0x14,             // 0x14
-        INS_ORA_ZPG_X,                  // 0x15
-        INS_ASL_ZPG_X,                  // 0x16
-        INS_SLO_ZPG_X,                  // 0x17
-        INS_CLC_IMPL,                   // 0x18
-        INS_ORA_ABS_Y,                  // 0x19
-        INS_NOP_IMP_0x1a,               // 0x1a
-        INS_SLO_ABS_Y,                  // 0x1b
-        INS_NOP_ABS_X_0x1c,             // 0x1c
-        INS_ORA_ABS_X,                  // 0x1d
-        INS_ASL_ABS_X,                  // 0x1e
-        INS_SLO_ABS_X,                  // 0x1f
-        INS_JSR_ABS,                    // 0x20
-        INS_AND_X_IND,                  // 0x21
-        INS_JAM_0x22,                   // 0x22
-        INS_RLA_X_IND,                  // 0x23
-        INS_BIT_ZPG,                    // 0x24
-        INS_AND_ZPG,                    // 0x25
-        INS_ROL_ZPG,                    // 0x26
-        INS_RLA_ZPG,                    // 0x27
-        INS_PLP_IMP,                    // 0x28
-        INS_AND_IMM,                    // 0x29
-        INS_ROL_A,                      // 0x2a
-        INS_ANC_IMM,                    // 0x2b
-        INS_BIT_ABS,                    // 0x2c
-        INS_AND_ABS,                    // 0x2d
-        INS_ROL_ABS,                    // 0x2e
-        INS_RLA_ABS,                    // 0x2f
-        INS_BMI_REL,                    // 0x30
-        INS_AND_IND_Y,                  // 0x31
-        INS_JAM_0x32,                   // 0x32
-        INS_RLA_IND_Y,                  // 0x33
-        INS_NOP_ZPG_X,                  // 0x34
-        INS_AND_ZPG_X,                  // 0x35
-        INS_ROL_ZPG_X,                  // 0x36
-        INS_RLA_ZPG_X,                  // 0x37
-        INS_SEC_IMP,                    // 0x38
-        INS_AND_ABS_Y,                  // 0x39
-        INS_NOP_IMP,                    // 0x3a
-        INS_RLA_ABS_Y,                  // 0x3b
-        INS_NOP_ABS_X_0x3c,             // 0x3c
-        INS_AND_ABS_X,                  // 0x3d
-        INS_ROL_ABS_X,                  // 0x3e
-        INS_RLA_ABS_X                   // 0x3f
+
+    void (*opcode_table[256])() = {
+        INS_BRK_IMPL_0x00,         // = 0x00,
+        INS_ORA_X_IND_0x01,        // = 0x01,
+        INS_JAM_0X02_0x02,         // = 0x02,
+        INS_SLO_X_IND_0x03,        // = 0x03,
+        INS_NOP_ZPG_0x04,          // = 0x04,
+        INS_ORA_ZPG_0x05,          // = 0x05,
+        INS_ASL_ZPG_0x06,          // = 0x06,
+        INS_SLO_ZPG_0x07,          // = 0x07,
+        INS_PHP_IMPL_0x08,         // = 0x08,
+        INS_ORA_IMM_0x09,          // = 0x09,
+        INS_ASL_IMP_0x0a,          // = 0x0a,
+        INS_ANC_IMM_0x0b ,         // = 0x0b,
+        INS_NOP_ABS_0x0c,          // = 0x0c,
+        INS_ORA_ABS_0x0d,          // = 0x0d,
+        INS_ASL_ABS_0x0e,          // = 0x0e,
+        INS_SLO_ABS_0x0f,          // = 0x0f,
+        INS_BPL_REL_0x10,          // = 0x10,
+        INS_ORA_IND_Y_0x11,        // = 0x11,
+        INS_JAM_0x12,              // = 0x12,
+        INS_SLO_IND_Y_0x13,        // = 0x13,
+        INS_NOP_ZPG_X_0x14,        // = 0x14,
+        INS_ORA_ZPG_X_0x15,        // = 0x15,
+        INS_ASL_ZPG_X_0x16,        // = 0x16,
+        INS_SLO_ZPG_X_0x17,        // = 0x17,
+        INS_CLC_IMPL_0x18,         // = 0x18,
+        INS_ORA_ABS_Y_0x19,        // = 0x19,
+        INS_NOP_IMP_0x1a,          // = 0x1a,
+        INS_SLO_ABS_Y_0x1b,        // = 0x1b,
+        INS_NOP_ABS_X_0x1c,        // = 0x1c,
+        INS_ORA_ABS_X_0x1d,        // = 0x1d,
+        INS_ASL_ABS_X_0x1e,        // = 0x1e,
+        INS_SLO_ABS_X_0x1f,        // = 0x1f,
+        INS_JSR_ABS_0x20,          // = 0x20,
+        INS_AND_X_IND_0x21,        // = 0x21,
+        INS_JAM_0x22_0x22,         // = 0x22,
+        INS_RLA_X_IND_0x23,        // = 0x23,
+        INS_BIT_ZPG_0x24,          // = 0x24,
+        INS_AND_ZPG_0x25,          // = 0x25,
+        INS_ROL_ZPG_0x26,          // = 0x26,
+        INS_RLA_ZPG_0x27,          // = 0x27,
+        INS_PLP_IMP_0x28,          // = 0x28,
+        INS_AND_IMM_0x29,          // = 0x29,
+        INS_ROL_A_0x2a,            // = 0x2a,
+        INS_ANC_IMM_0x2b,          // = 0x2b,
+        INS_BIT_ABS_0x2c,          // = 0x2c,
+        INS_AND_ABS_0x2d,          // = 0x2d,
+        INS_ROL_ABS_0x2e,          // = 0x2e,
+        INS_RLA_ABS_0x2f,          // = 0x2f
+        INS_BMI_REL_0x30,          // = 0x30
+        INS_AND_IND_Y_0x31,        // = 0x31
+        INS_JAM_0x32,              // = 0x32
+        INS_RLA_IND_Y_0x33,        // = 0x33
+        INS_NOP_ZPG_X_0x34,        // = 0x34
+        INS_AND_ZPG_X_0x35,        // = 0x35
+        INS_ROL_ZPG_X_0x36,        // = 0x36
+        INS_RLA_ZPG_X_0x37,        // = 0x37
+        INS_SEC_IMP_0x38,          // = 0x38
+        INS_AND_ABS_Y_0x39,        // = 0x39
+        INS_NOP_IMP_0x3a,          // = 0x3a
+        INS_RLA_ABS_Y_0x3b,        // = 0x3b
+        INS_NOP_ABS_X_0x3c,        // = 0x3c
+        INS_AND_ABS_X_0x3d,        // = 0x3d
+        INS_ROL_ABS_X_0x3e,        // = 0x3e
+        INS_RLA_ABS_X_0x3f,        // = 0x3f
+        INS_RTI_IMP_0x40,          // = 0x40
+        INS_EOR_X_IND_0x41,        // = 0x41
+        INS_JAM_0x42,              // = 0x42
+        INS_SRE_X_IND_0x43,        // = 0x43
+        INS_NOP_ZPG_X_0x44,        // = 0x44
+        INS_EOR_ZPG_0x45,          // = 0x45
+        INS_LSR_ZPG_0x46,          // = 0x46
+        INS_SRE_ZPG_0x47,          // = 0x47
+        INS_PHA_IMP_0x48,          // = 0x48
+        INS_EOR_IMP_0x49,          // = 0x49
+        INS_LSR_A_0x4a,            // = 0x4a
+        INS_ALR_IMP_0x4b,          // = 0x4b
+        INS_JMP_ABS_0x4c,          // = 0x4c
+        INS_EOR_ABS_0x4d,          // = 0x4d
+        INS_LSR_ABS_0x4e,          // = 0x4e
+        INS_SRE_ABS_0x4f,          // = 0x4f
+        INS_BVC_REL_0x50,          // = 0x50
+        INS_EOR_IND_Y_0x51,        // = 0x51
+        INS_JAM_0x52,              // = 0x52
+        INS_SRE_IND_Y_0x53,        // = 0x53
+        INS_NOP_ZPG_X_0x54,        // = 0x54
+        INS_EOR_ZPG_X_0x55,        // = 0x55
+        INS_LSR_ZPG_X_0x56,        // = 0x56
+        INS_SRE_ZPG_X_0x57,        // = 0x57
+        INS_CLI_IMP_0x58,          // = 0x58
+        INS_EOR_ABS_Y_0x59,        // = 0x59
+        INS_NOP_IMP_0x5a,          // = 0x5a
+        INS_SRE_ABS_Y_0x5b,        // = 0x5b
+        INS_NOP_ABS_X_0x5c,        // = 0x5c
+        INS_EOR_ABS_X_0x5d,        // = 0x5d
+        INS_LSR_ABS_X_0x5e,        // = 0x5e
+        INS_SRE_ABS_X_0x5f,        // = 0x5f
+        INS_RTS_IMP_0x60,          // = 0x60
+        INS_ADC_X_IND_0x61,        // = 0x61
+        INS_JAM_0x62,              // = 0x62
+        INS_RRA_X_IND_0x63,        // = 0x63
+        INS_NOP_ZPG_0x64,          // = 0x64
+        INS_ADC_ZPG_0x65,          // = 0x65
+        INS_ROR_ZPG_0x66,          // = 0x66
+        INS_RRA_ZPG_0x67,          // = 0x67
+        INS_PLA_IMP_0x68,          // = 0x68
+        INS_ADC_IMM_0x69,          // = 0x69
+        INS_ROR_A_0x6a,            // = 0x6a
+        INS_ARR_IMM_0x6b,          // = 0x6b
+        INS_JMP_IND_0x6c,          // = 0x6c
+        INS_ADC_ABS_0x6d,          // = 0x6d
+        INS_ROR_ABS_0x6e,          // = 0x6e
+        INS_RRA_ABS_0x6f,          // = 0x6f
+        INS_BVS_REL_0x70,          // = 0x70
+        INS_ADC_IND_Y_0x71,        // = 0x71
+        INS_JAM_0x72,              // = 0x72
+        INS_RRA_IND_Y_0x73,        // = 0x73
+        INS_NOP_ZPG_X_0x74,        // = 0x74
+        INS_ADC_ZPG_X_0x75,        // = 0x75
+        INS_ROR_ZPG_X_0x76,        // = 0x76
+        INS_RRA_ZPG_X_0x77,        // = 0x77
+        INS_SEA_IMP_0x78,          // = 0x78
+        INS_ADC_ABS_Y_0x79,        // = 0x79
+        INS_NOP_IMP_0x7a,          // = 0x7a
+        INS_RRA_ABS_Y_0x7b,        // = 0x7b
+        INS_NOP_ABS_X_0x7c,        // = 0x7c
+        INS_ADC_ABS_X_0x7d,        // = 0x7d
+        INS_ROR_ABS_X_0x7e,        // = 0x7e
+        INS_RRA_ABS_X_0x7f,        // = 0x7f
+        INS_NOP_IMM_0x80,          // = 0x80
+        INS_STA_X_IND_0x81,        // = 0x81
+        INS_NOP_IMM_0x82,          // = 0x82
+        INS_SAX_X_IND_0x83,        // = 0x83
+        INS_STY_ZPG_0x84,          // = 0x84
+        INS_STA_ZPG_0x85,          // = 0x85
+        INS_STX_ZPG_0x86,          // = 0x86
+        INS_SAX_ZPG_0x87,          // = 0x87
+        INS_DEY_IMP_0x88,          // = 0x88
+        INS_NOP_IMM_0x89,          // = 0x89
+        INS_TXA_IMP_0x8a,          // = 0x8a
+        INS_ANE_IMM_0x8b,          // = 0x8b
+        INS_STY_ABS_0x8c,          // = 0x8c
+        INS_STA_ABS_0x8d,          // = 0x8d
+        INS_STX_ABS_0x8e,          // = 0x8e
+        INS_SAX_ABS_0x8f,          // = 0x8f
+        INS_BCC_REL_0x90,          // = 0x90
+        INS_STA_IND_Y_0x91,        // = 0x91
+        INS_JAM_0x92,              // = 0x92
+        INS_SHA_IND_Y_0x93,        // = 0x93
+        INS_STY_ZPG_X_0x94,        // = 0x94
+        INS_STA_ZPG_X_0x95,        // = 0x95
+        INS_STX_ZPG_Y_0x96,        // = 0x96
+        INS_SAX_ZPG_Y_0x97,        // = 0x97
+        INS_TYA_IMP_0x98,          // = 0x98
+        INS_STA_ABS_Y_0x99,        // = 0x99
+        INS_TXS_IMP_0x9a,          // = 0x9a
+        INS_TAS_ABS_Y_0x9b,        // = 0x9b
+        INS_SHY_ABS_X_0x9c,        // = 0x9c
+        INS_STA_ABS_X_0x9d,        // = 0x9d
+        INS_SHX_ABS_Y_0x9e,        // = 0x9e
+        INS_SHA_ABS_Y_0x9f,        // = 0x9f
+        INS_LDY_IMM_0xa0,          // = 0xa0
+        INS_LDA_X_IND_0xa1,        // = 0xa1
+        INS_LDX_IMM_0xa2,          // = 0xa2
+        INS_LAX_X_IND_0xa3,        // = 0xa3
+        INS_LDY_ZPG_0xa4,          // = 0xa4
+        INS_LDA_ZPG_0xa5,          // = 0xa5
+        INS_LDX_ZPG_0xa6,          // = 0xa6
+        INS_LAX_ZPG_0xa7,          // = 0xa7
+        INS_TAY_IMP_0xa8,          // = 0xa8
+        INS_LDA_IMM_0xa9,          // = 0xa9
+        INS_TAX_IMP_0xaa,          // = 0xaa
+        INS_LXA_IMM_0xab,          // = 0xab
+        INS_LDY_ABS_0xac,          // = 0xac
+        INS_LDA_ABS_0xad,          // = 0xad
+        INS_LDX_ABS_0xae,          // = 0xae
+        INS_LAX_ABS_0xaf,          // = 0xaf
+        INS_BCS_REL_0xb0,          // = 0xb0
+        INS_LDA_IND_Y_0xb1,        // = 0xb1
+        INS_JAM_0xb2,              // = 0xb2
+        INS_LAX_IND_Y_0xb3,        // = 0xb3
+        INS_LDY_ZPG_X_0xb4,        // = 0xb4
+        INS_LDA_ZPG_X_0xb5,        // = 0xb5
+        INS_LDX_ZPG_Y_0xb6,        // = 0xb6
+        INS_LAX_ZPG_Y_0xb7,        // = 0xb7
+        INS_CLV_IMP_0xb8,          // = 0xb8
+        INS_LDA_ABS_Y_0xb9,        // = 0xb9
+        INS_TSX_IMP_0xba,          // = 0xba
+        INS_LAS_ABS_Y_0xbb,        // = 0xbb
+        INS_LDY_ABS_X_0xbc,        // = 0xbc
+        INS_LDA_ABS_X_0xbd,        // = 0xbd
+        INS_LDX_ABS_Y_0xbe,        // = 0xbe
+        INS_LAX_ABS_Y_0xbf,        // = 0xbf
+        INS_CPY_IMM_0xc0,          // = 0xc0
+        INS_CMP_X_IND_0xc1,        // = 0xc1
+        INS_NOP_IMM_0xc2,          // = 0xc2
+        INS_DCP_X_IND_0xc3,        // = 0xc3
+        INS_CPY_ZPG_0xc4,          // = 0xc4
+        INS_CMP_ZPG_0xc5,          // = 0xc5
+        INS_DEC_ZPG_0xc6,          // = 0xc6
+        INS_DCP_ZPG_0xc7,          // = 0xc7
+        INS_INY_IMP_0xc8,          // = 0xc8
+        INS_CMP_IMM_0xc9,          // = 0xc9
+        INS_DEX_IMP_0xca,          // = 0xca
+        INS_SBX_IMP_0xcb,          // = 0xcb
+        INS_CPY_ABS_0xcc,          // = 0xcc
+        INS_CMP_ABS_0xcd,          // = 0xcd
+        INS_DEC_ABS_0xce,          // = 0xce
+        INS_DCP_ABS_0xcf,          // = 0xcf
+        INS_BNE_REL_0xd0,          // = 0xd0
+        INS_CMP_IND_Y_0xd1,        // = 0xd1
+        INS_JAM_0xd2,              // = 0xd2
+        INS_DCP_IND_Y_0xd3,        // = 0xd3
+        INS_NOP_ZPG_X_0xd4,        // = 0xd4
+        INS_CMP_ZPG_X_0xd5,        // = 0xd5
+        INS_DEC_ZPG_X_0xd6,        // = 0xd6
+        INS_DCP_ZPG_X_0xd7,        // = 0xd7
+        INS_CLD_IMP_0xd8,          // = 0xd8
+        INS_CMP_ABS_Y_0xd9,        // = 0xd9
+        INS_NOP_IMP_0xda,          // = 0xda
+        INS_DCP_ABS_Y_0xdb,        // = 0xdb
+        INS_NOP_ABS_X_0xdc,        // = 0xdc
+        INS_CMP_ABS_X_0xdd,        // = 0xdd
+        INS_DEC_ABS_X_0xde,        // = 0xde
+        INS_DCP_ABS_X_0xdf,        // = 0xdf
+        INS_CPX_IMM_0xe0,          // = 0xe0
+        INS_SBC_X_IND_0xe1,        // = 0xe1
+        INS_NOP_IMM_0xe2,          // = 0xe2
+        INS_ISC_X_IND_0xe3,        // = 0xe3
+        INS_CPX_ZPG_0xe4,          // = 0xe4
+        INS_SBC_ZPG_0xe5,          // = 0xe5
+        INS_INC_ZPG_0xe6,          // = 0xe6
+        INS_ISC_ZPG_0xe7,          // = 0xe7
+        INS_INX_IMP_0xe8,          // = 0xe8
+        INS_SBC_IMM_0xe9,          // = 0xe9
+        INS_NOP_IMP_0xea,          // = 0xea
+        INS_USBC_IMM_0xeb,         // = 0xeb
+        INS_CPX_ABS_0xec,          // = 0xec
+        INS_SBC_ABS_0xed,          // = 0xed
+        INS_INC_ABS_0xee,          // = 0xee
+        INS_ISC_ABS_0xef,          // = 0xef
+        INS_BEQ_REL_0xf0,          // = 0xf0
+        INS_SBC_IND_Y_0xf1,        // = 0xf1
+        INS_JAM_0xf2,              // = 0xf2
+        INS_ISC_IND_Y_0xf3,        // = 0xf3
+        INS_NOP_ZPG_X_0xf4,        // = 0xf4
+        INS_SBC_ZPG_X_0xf5,        // = 0xf5
+        INS_INC_ZPG_X_0xf6,        // = 0xf6
+        INS_ISC_ZPG_X_0xf7,        // = 0xf7
+        INS_SED_IMP_0xf8,          // = 0xf8
+        INS_SBC_ABS_Y_0xf9,        // = 0xf9
+        INS_NOP_IMP_0xfa,          // = 0xfa
+        INS_ISC_ABS_Y_0xfb,        // = 0xfb
+        INS_NOP_ABS_X_0xfc,        // = 0xfc
+        INS_SBC_ABS_X_0xfd,        // = 0xfd
+        INS_INC_ABS_X_0xfe,        // = 0xfe
+        INS_ISC_ABS_X_0xff         // = 0xff
     };
 
 public:
