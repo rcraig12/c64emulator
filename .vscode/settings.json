@@ -1,15 +1,5 @@
 {
-    "files.associations": {
-        "iostream": "cpp",
-        "ostream": "cpp"
-    },
-    "kickassembler.assembler.jar": "~/KickAssembler/KickAss.jar",
-    "kickassembler.javaAllowFileCreation": true,
-    "kickassembler.javaRuntime": "/usr/bin/java",
-    "kickassembler.opcodes.DTV": true,
-    "kickassembler.opcodes.65ce02": true,
-    "kickassembler.opcodes.65c02": true,
-    "kickassembler.opcodes.45gs02": true,
-    "kickassembler.emulatorRuntime": "/usr/bin/x64",
-    "kickassembler.debuggerRuntime": "/home/robert/C64-65XE-Debugger/c64debugger"
+  "files.associations": {
+    "*.tcc": "cpp"
+  }
 }

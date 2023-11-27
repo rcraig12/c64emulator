@@ -1,33 +1,38 @@
 #include "Memory.h"
+#include <iostream>
+#include <fstream>
+#include <cstring> // For memset
 
 using namespace std;
 
-Memory::Memory()
-{
+Memory::Memory() : memory(nullptr), memorySize(0) {
 }
 
-Memory::~Memory()
-{
+Memory::~Memory() {
+    delete[] memory;
 }
 
-void Memory::SetMaxMemory( Word memorysize )
-{
-    // Maximum memory size is expressed in words
-    this->memory = new Byte[ memorysize ] ;
+void Memory::SetMaxMemory(Word memorysize) {
+    this->memorySize = memorysize;
+    this->memory = new Byte[memorysize]{0}; // Initialize with zeros
 }
 
-const Byte Memory::ReadMemory( const Word address )
-{
-    return this->memory[address];
+const Byte Memory::ReadMemory(const Word address) {
+    if (address < memorySize) {
+        return this->memory[address];
+    }
+    // Handle out-of-bounds access
+    return 0;
 }
 
-void Memory::WriteMemory( const Byte byte, const Word address )
-{
-    this->memory[address] = byte;
+void Memory::WriteMemory(const Byte byte, const Word address) {
+    if (address < memorySize) {
+        this->memory[address] = byte;
+    }
+    // Handle out-of-bounds access
 }
 
-Byte* Memory::GetMemory()
-{
+Byte* Memory::GetMemory() {
     return this->memory;
 }
 
@@ -113,4 +118,16 @@ void Memory::DisplayMemory(){
     
     }
 
+}
+
+Byte* Memory::GetScreenMemory() {
+    return reinterpret_cast<Byte*>(memory + 0x0400);
+}
+
+Byte* Memory::GetColorMemory() {
+    return reinterpret_cast<Byte*>(memory + 0xD800);
+}
+
+const Byte* Memory::GetCharacterROM() {
+    return reinterpret_cast<const Byte*>(memory + 0xD000);
 }

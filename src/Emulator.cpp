@@ -2,14 +2,14 @@
 
 using namespace std;
 
-Emulator::Emulator( Clock &clock, Memory &memory, VICII &vic, CPU &cpu, SID &sid )
+Emulator::Emulator( Clock &clock, Memory &memory, VICII &vic, CPU &cpu, SID &sid, Video &video )
 {
     this->memory = &memory;
     this->clock = &clock;
     this->vic = &vic;
     this->cpu = &cpu;
     this->sid = &sid;
-    this->video = new Video();
+    this->video = &video;
     this->Start();
 }
 
@@ -46,12 +46,10 @@ void Emulator::Start()
     //this->memory->DisplayMemory();
     this->cpu->Reset();
     this->cpu->DisplayState();
-    this->cpu->RunTestOpcode(0x00);
-    this->cpu->RunTestOpcode(0x01);
-    this->cpu->RunTestOpcode(0x20);
+    
     // sid.Init( memory );
     
-    //this->Run();
+    this->Run();
 
 }
 
@@ -60,11 +58,27 @@ void Emulator::Run(){
     while ( this->emulatorRunning == true ){
 
         //clock->Tick();
+        this->video->Render();
+        this->cpu->RunTestOpcode(0x00);
+        this->Wait(2000000);
+        this->cpu->RunTestOpcode(0x01);
+        this->Wait(2000000);
+        this->cpu->RunTestOpcode(0x20);
+        this->Wait(2000000);
 
+
+        SDL_Event e;
+        while (SDL_PollEvent(&e) != 0) {
+            if (e.type == SDL_QUIT) {
+                this->emulatorRunning = false;
+            }
+        }
     }
 
+    this->memory->DisplayMemory();
+
     cout << endl << "[Notification] info: Emulator halted!" << endl;
-    this->Stop();
+    //this->Stop();
 
 }
 
@@ -106,4 +120,16 @@ void Emulator::DisplayLicense(){
     cout << "OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER" << endl;
     cout << "DEALINGS IN THE SOFTWARE." << endl << endl;
 
+}
+
+void Emulator::Wait( unsigned milliseconds )
+{
+    int microseconds = milliseconds * 1000;
+
+    for( int i = 0; i <= microseconds; i++ ){
+
+        //do nothing
+
+    }
+    
 }

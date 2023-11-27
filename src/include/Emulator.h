@@ -28,10 +28,11 @@ public:
     CPU *cpu;
     SID *sid;
     Video *video;
-    Emulator( Clock &clock, Memory &memory, VICII &vic, CPU &cpu, SID &sid );
+    Emulator( Clock &clock, Memory &memory, VICII &vic, CPU &cpu, SID &sid, Video &video );
     ~Emulator();
     void StartupTitle();
     void DisplayLicense();
+    void Wait ( unsigned int milliseconds );
     void Start();
     void Run();
     void Stop();
